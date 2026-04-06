@@ -1,0 +1,22 @@
+{
+  "name": "jarvis-cli-groq-tavily-agent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tavily/core": "^0.7.2",
+    "dotenv": "^17.3.1",
+    "groq": "^5.18.0",
+    "groq-js": "^1.29.0",
+    "groq-sdk": "^1.1.2",
+    "openai": "^6.32.0",
+    "tavily": "^1.0.2"
+  }
+}
