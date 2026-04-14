@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Jarvis AI</title>
+</head>
+<body class="min-h-screen overflow-hidden bg-[#171c24] text-zinc-100">
+    <div class="relative min-h-screen bg-[radial-gradient(circle_at_center,_rgba(61,72,95,0.35),_transparent_35%),linear-gradient(180deg,_#232935_0%,_#1a2029_45%,_#141922_100%)]">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.03),_transparent_40%)]"></div>
+
+        <header class="relative z-10 flex items-center justify-between px-6 py-6 sm:px-8">
+            <div class="flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-sm">
+                    <div class="h-4 w-4 rounded-md bg-[#1b2140]"></div>
+                </div>
+                <span class="text-sm font-medium tracking-wide text-zinc-200">Jarvis AI</span>
+            </div>
+
+            <button
+                type="button"
+                class="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-zinc-300 backdrop-blur transition hover:bg-white/10"
+                aria-label="Menu"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 8h.01M16 8h.01M8 16h.01M16 16h.01M9 8a1 1 0 11-2 0 1 1 0 012 0zm8 0a1 1 0 11-2 0 1 1 0 012 0zM9 16a1 1 0 11-2 0 1 1 0 012 0zm8 16a1 1 0 11-2 0 1 1 0 012 0z" />
+                </svg>
+            </button>
+        </header>
+
+        <main class="relative z-10 flex min-h-[calc(100vh-88px)] flex-col items-center justify-center px-6 pb-44 text-center sm:px-8">
+            <div class="mb-8 flex h-18 w-18 items-center justify-center rounded-[24px] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:h-20 sm:w-20">
+                <div class="h-8 w-8 rounded-2xl bg-[#1b2140]"></div>
+            </div>
+
+            <h1 class="max-w-3xl text-4xl font-medium tracking-tight text-white sm:text-5xl">
+                Hi, I’m Jarvis AI
+            </h1>
+            <p class="mt-3 max-w-3xl text-3xl font-light tracking-tight text-zinc-100 sm:text-5xl">
+                Can I help you with anything?
+            </p>
+            <p class="mt-6 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">
+                Ready to assist with questions, ideas, coding help, and everyday tasks.
+                Start a conversation below and Jarvis AI will take it from there.
+            </p>
+
+            <div id="response" class="mt-8 hidden max-w-2xl rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-left text-sm leading-7 text-zinc-200 backdrop-blur">
+                Yes. Jarvis AI is ready. Ask me anything to begin.
+            </div>
+        </main>
+
+        <footer class="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-center px-4 pb-8 sm:px-6">
+            <div class="pointer-events-auto w-full max-w-2xl">
+                <div class="rounded-[28px] border border-white/10 bg-[#262c37]/90 p-3 shadow-[0_20px_80px_rgba(0,0,0,0.4)] backdrop-blur-xl">
+                    <input
+                        id="userInput"
+                        type="text"
+                        placeholder="Ask me anything..."
+                        class="w-full bg-transparent px-3 pb-4 pt-2 text-sm text-zinc-100 placeholder:text-zinc-500 focus:outline-none"
+                    >
+
+                    <div class="flex items-center justify-between gap-3 border-t border-white/5 px-2 pt-3">
+                        <div class="flex items-center gap-2 text-zinc-400">
+                            <button type="button" class="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10" aria-label="Attach file">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828L18 9.828a4 4 0 10-5.656-5.656L5.757 10.757a6 6 0 108.486 8.486L20.5 13" />
+                                </svg>
+                            </button>
+                            <button type="button" class="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10" aria-label="Browse">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </button>
+                            <button type="button" class="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10" aria-label="Voice">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.5a4.5 4.5 0 004.5-4.5V8a4.5 4.5 0 10-9 0v6a4.5 4.5 0 004.5 4.5zm0 0V21m-4-3h8" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <span class="hidden text-xs text-zinc-500 sm:inline">Jarvis Mode</span>
+                            <button
+                                type="button"
+                                class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-zinc-950 transition hover:bg-zinc-200"
+                                aria-label="Send"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mt-4 text-center text-xs text-zinc-500">
+                    Jarvis AI can make mistakes, so please verify important information.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
