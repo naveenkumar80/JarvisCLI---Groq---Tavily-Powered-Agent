@@ -30,28 +30,29 @@
         </header>
 
         <main class="relative z-10 flex min-h-[calc(100vh-88px)] flex-col items-center justify-center px-6 pb-44 text-center sm:px-8">
-            <div class="mb-8 flex h-18 w-18 items-center justify-center rounded-[24px] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:h-20 sm:w-20">
-                <div class="h-8 w-8 rounded-2xl bg-[#1b2140]"></div>
+            <div id="hero">
+                <div class="mb-8 flex h-18 w-18 items-center justify-center rounded-[24px] bg-white shadow-[0_20px_60px_rgba(0,0,0,0.35)] sm:h-20 sm:w-20">
+                    <div class="h-8 w-8 rounded-2xl bg-[#1b2140]"></div>
+                </div>
+                <h1 class="max-w-3xl text-4xl font-medium tracking-tight text-white sm:text-5xl">
+                    Hi, I’m Jarvis AI
+                </h1>
+                <p class="mt-3 max-w-3xl text-3xl font-light tracking-tight text-zinc-100 sm:text-5xl">
+                    Can I help you with anything?
+                </p>
+                <p class="mt-6 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">
+                    Ready to assist with questions, ideas, coding help, and everyday tasks.
+                    Start a conversation below and Jarvis AI will take it from there.
+                </p>
             </div>
 
-            <h1 class="max-w-3xl text-4xl font-medium tracking-tight text-white sm:text-5xl">
-                Hi, I’m Jarvis AI
-            </h1>
-            <p class="mt-3 max-w-3xl text-3xl font-light tracking-tight text-zinc-100 sm:text-5xl">
-                Can I help you with anything?
-            </p>
-            <p class="mt-6 max-w-xl text-sm leading-7 text-zinc-400 sm:text-base">
-                Ready to assist with questions, ideas, coding help, and everyday tasks.
-                Start a conversation below and Jarvis AI will take it from there.
-            </p>
-
-            <div id="response" class="mt-8 hidden max-w-2xl rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-left text-sm leading-7 text-zinc-200 backdrop-blur">
+            <div id="response" class="mt-8 hidden w-full rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-left text-sm leading-7 text-zinc-200 backdrop-blur">
                 Yes. Jarvis AI is ready. Ask me anything to begin.
             </div>
         </main>
 
         <footer class="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex justify-center px-4 pb-8 sm:px-6">
-            <div class="pointer-events-auto w-full max-w-2xl">
+            <div class="pointer-events-auto w-full">
                 <div class="rounded-[28px] border border-white/10 bg-[#262c37]/90 p-3 shadow-[0_20px_80px_rgba(0,0,0,0.4)] backdrop-blur-xl">
                     <input
                         id="userInput"

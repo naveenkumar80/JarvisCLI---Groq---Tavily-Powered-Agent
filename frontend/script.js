@@ -8,6 +8,15 @@
     const browseButton = document.querySelector('footer button[aria-label="Browse"]');
     const attachButton = document.querySelector('footer button[aria-label="Attach file"]');
     const menuButton = document.querySelector('header button[aria-label="Menu"]');
+    const hero = document.getElementById('hero');
+
+    let chatStarted = false;
+    function startChat() {
+        if(!chatStarted) {
+            hero.style.display = 'none';
+            chatStarted = true;
+        }
+    }
 
     const API_URL = 'http://localhost:3000/chat';
     let conversationHistory = [];   // stores { role, content }
@@ -202,7 +211,9 @@
       if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
         processUserMessage();
+        startChat();
       }
+      
     });
     initVoice();
     setupFileReader(attachButton);
